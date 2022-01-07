@@ -123,12 +123,8 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
-EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
-EMAIL_HOST = str(os.getenv('EMAIL_HOST'))
-EMAIL_HOST_USER = str(os.getenv('EMAIL_HOST_USER'))
-EMAIL_HOST_PASSWORD = str(os.getenv('EMAIL_HOST_PASSWORD'))
-EMAIL_PORT = str(os.getenv('EMAIL_PORT'))
-EMAIL_USE_TLS = True
-EMAIL_USE_SSL = False
-
-
+EMAIL_BACKEND = str(os.getenv('EMAIL_BACKEND'))
+AWS_ACCESS_KEY_ID = str(os.getenv('AWS_ACCESS_KEY_ID'))
+AWS_SECRET_ACCESS_KEY = str(os.getenv('AWS_SECRET_ACCESS_KEY'))
+AWS_SES_REGION_NAME = str(os.getenv('AWS_SES_REGION_NAME'))
+AWS_SES_REGION_ENDPOINT =str(os.getenv('AWS_SES_REGION_ENDPOINT'))

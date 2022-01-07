@@ -1,9 +1,7 @@
 from django.shortcuts import redirect, render, HttpResponse
 from django.core.mail import send_mail, BadHeaderError
 from .forms import contactForm
-import os
-from dotenv import load_dotenv
-load_dotenv()
+
 # Create your views here.
 
 def index(request):
@@ -31,7 +29,7 @@ def index(request):
             '''.format(data['email'],data['name'],data['message'] )            
             
             try:
-                send_mail(data['subject'], message, '', [str(os.getenv('EMAIL_HOST_USER'))])
+                send_mail(data['subject'], message, '', ['ashenafi.teressa@gmail.com'])
             except BadHeaderError:
                 return HttpResponse('Invalid header found.')
 
