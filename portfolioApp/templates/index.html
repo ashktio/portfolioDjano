@@ -199,24 +199,10 @@
     <section class="s2">
       <div id="contact" class="main-container">
         <h3 style="text-align: center">Leave a message</h3>
-        <form id="contact-form" action="message" method="POST">
-          {% csrf_token %}
-          <label>Full Name</label>
-          <input class="input-field" type="text" name="name" required />
+        {% load crispy_forms_tags %}
 
-          <label>Subject</label>
-          <input class="input-field" type="text" name="subject" required />
-
-          <label>Email</label>
-          <input class="input-field" type="email" name="email" required />
-
-          <label>Message</label>
-          <textarea
-            class="input-field"
-            type="text"
-            name="message"
-            required
-          ></textarea>
+        <form id="contact-form" method="POST">
+          {% csrf_token %} {{ form|crispy }}
 
           <input id="submit-btn" type="submit" value="Send" />
         </form>

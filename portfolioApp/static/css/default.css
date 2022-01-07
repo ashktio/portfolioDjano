@@ -293,9 +293,11 @@ ul {
 
 #contact-form textarea {
   min-height: 100px;
+  width: 100%;
   font-size: 14px;
+  background-color: var(--secondaryColor);
 }
-.input-field {
+#contact-form input {
   width: 100%;
   padding-top: 10px;
   padding-bottom: 10px;
