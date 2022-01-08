@@ -29,12 +29,9 @@ def index(request):
             '''.format(data['email'],data['name'],data['message'] )            
             
             try:
-                send_mail(data['subject'], message, '', ['ashenafi.teressa@gmail.com'])
+                send_mail(data['subject'], message, 'ashenafi.teressa@gmail.com', ['ashenafi.teressa@gmail.com'])
             except BadHeaderError:
                 return HttpResponse('Invalid header found.')
 
-            return redirect('thanks')
+            return redirect('/')
     return render(request, 'index.html', {'form' : form})
-
-def thanks(request):
-    return render(request, 'thank_you.html')

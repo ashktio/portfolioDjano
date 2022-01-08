@@ -315,7 +315,7 @@ ul {
   background-color: var(--buttonColor);
   border: none;
   /* added this line below */
-  min-height: 40px;
+  /* min-height: 40px; */
 }
 
 @media screen and (max-width: 1200px) {
